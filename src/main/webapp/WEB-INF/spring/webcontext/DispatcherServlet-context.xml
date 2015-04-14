@@ -8,11 +8,19 @@ http://www.springframework.org/schema/mvc http://www.springframework.org/schema/
 
 	<mvc:annotation-driven enable-matrix-variables="true" />
 	<context:component-scan base-package="com.trinq.webquanly" />
-
+   
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
-
+    <bean id="customerRepository" class="com.trinq.webquanly.domain.repository.impl.InMemoryCustomerRepository" />   
+  
+    <bean id="dataSource"  
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="org.postgresql.Driver"/>
+        <property name="url" value="jdbc:postgresql://ec2-54-163-239-102.compute-1.amazonaws.com:5432/dea7u4stcbdoka"/>
+        <property name="username" value="weyywotjfondsr"/>
+        <property name="password" value="D3RrWlA9KhyabF9r9Nl22_fsQ5"/>
+	</bean> 
 </beans>

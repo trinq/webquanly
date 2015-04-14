@@ -2,15 +2,20 @@ package com.trinq.webquanly.domain.repository.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.sql.DataSource;  
+
 
 import org.springframework.stereotype.Repository;
-
+import org.springframework.jdbc.core.JdbcTemplate;  
 import com.trinq.webquanly.domain.Customer;
 import com.trinq.webquanly.domain.repository.CustomerRepository;
 
 @Repository
 public class InMemoryCustomerRepository implements CustomerRepository  {
-  
+     
+  	 @Autowired  	
+    DataSource dataSource;  
+
     private List<Customer> listOfCustomers = new ArrayList<Customer>();
     
  	 public InMemoryCustomerRepository() {
