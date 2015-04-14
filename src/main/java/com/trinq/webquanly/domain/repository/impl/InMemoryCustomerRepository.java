@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.sql.DataSource;  
 
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.jdbc.core.JdbcTemplate;  
 import com.trinq.webquanly.domain.Customer;
@@ -13,8 +13,8 @@ import com.trinq.webquanly.domain.repository.CustomerRepository;
 @Repository
 public class InMemoryCustomerRepository implements CustomerRepository  {
      
-  	 @Autowired  	
-    DataSource dataSource;  
+  	 @Autowired 
+    private DataSource dataSource;
 
     private List<Customer> listOfCustomers = new ArrayList<Customer>();
     
@@ -32,7 +32,10 @@ public class InMemoryCustomerRepository implements CustomerRepository  {
 
     @Override
     public List<Customer> getAllCustomers() {
-       
+      
+      String sql = "select * from customer";
+      JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);  
+      listOfCustomers =
          
         return listOfCustomers;
     }
