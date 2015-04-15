@@ -24,7 +24,7 @@ http://www.springframework.org/schema/mvc http://www.springframework.org/schema/
     <bean id="dataSource"  
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="org.postgresql.Driver"/>
-        <property name="url" value="jdbc:postgresql://ec2-54-163-239-102.compute-1.amazonaws.com:5432/dea7u4stcbdoka"/>
+        <property name="url" value="jdbc:postgresql://ec2-54-163-239-102.compute-1.amazonaws.com:5432/dea7u4stcbdoka?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory"/>
         <property name="username" value="weyywotjfondsr"/>
         <property name="password" value="D3RrWlA9KhyabF9r9Nl22_fsQ5"/>
 	</bean> 
