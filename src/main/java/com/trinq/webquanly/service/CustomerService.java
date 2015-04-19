@@ -9,4 +9,5 @@ import com.trinq.webquanly.domain.Customer;
 public interface CustomerService {
 
 	List<Customer> getAllCustomers();
+   void addCustomer(Customer customer);
 }
