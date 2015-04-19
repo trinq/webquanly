@@ -30,7 +30,7 @@ public class CustomerController {
 		return "customers";
 	}
   
-   @RequestMapping(value ="/get" ,method= RequestMethod.GET)
+   @RequestMapping(value ="/add" ,method= RequestMethod.GET)
    public String	getAddNewCustomerForm(Model model) {
      		Customer newCustomer = new Customer();
       	model.addAttribute("newCustomer",newCustomer);

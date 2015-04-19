@@ -29,10 +29,15 @@ public class InMemoryCustomerRepository implements CustomerRepository  {
       listOfCustomers = jdbcTemplate.query(selectAllCustomer,new CustomerRowMapper());
       return listOfCustomers;
     }
-  
-  public void addCustomer(Customer customer ) {
+     
+     public void addCustomer(Customer customer ) {
     
-    	listOfCustomers.add(customer);
+    	String insertCustomer = "INSERT INTO customer "  
+    								+ "(name,address) VALUES (?, ?)";
+      JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);  
+		jdbcTemplate.update(
+      insertCustomer,new Object[]{customer.getName(),customer.getAddress()});
+    
     
   }
   

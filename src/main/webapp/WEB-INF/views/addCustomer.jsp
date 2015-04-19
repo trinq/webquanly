@@ -21,22 +21,36 @@
 		</div>
 	</section>
 	<section class="container">
-		<form:form method="POST" action="/customers/add" modelAttribute="newCustomer">
-             <table>
-                <tr>
-                    <td><form:label path="name">Name</form:label></td>
-                    <td><form:input path="name"/></td>
-                </tr>
-                <tr>
-                    <td><form:label path="address">Address</form:label></td>
-                    <td><form:input path="address"/></td>
-                </tr>
-               
-                <tr>
-                    <td><input type="submit" value="Submit"/></td>
-                </tr>
-            </table>
-        </form:form>
+		<form:form modelAttribute="newCustomer" class="form-horizontal">
+			<fieldset>
+				<legend>Add new Customer</legend>
+
+				<div class="form-group">
+					<label class="control-label col-lg-2 col-lg-2" for="name">Name</label>
+					<div class="col-lg-10">
+						<form:input id="name" path="name" type="text"
+							class="form:input-large" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-lg-2 col-lg-2" for="address">Address
+						</label>
+					<div class="col-lg-10">
+							<form:textarea	id="address"	path="address"	rows	="2"/>	
+							
+					</div>
+				</div>
+			
+				<div class="form-group">
+					<div class="col-lg-offset-2 col-lg-10">
+						<input type="submit" id="btnAdd" class="btn btn-primary"
+							value="Add" />
+					</div>
+				</div>
+
+			</fieldset>
+		</form:form>
 	</section>
 </body>
 </html>
